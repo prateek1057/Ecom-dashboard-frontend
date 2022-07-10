@@ -19,14 +19,18 @@
 }
 .register {
   margin-left: 30%;
+  margin-top: 100px;
 }
-.login {
+.register h1 {
+  margin: 30px;
+}
+/*.login {
   margin-left: 30%;
   margin-top: 100px;
 }
 .login h1 {
   margin: 30px;
-}
+}*/
 .add-product {
   margin: 25px;
   margin-left: 30%;

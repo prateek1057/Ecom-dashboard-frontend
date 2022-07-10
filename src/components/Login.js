@@ -23,7 +23,7 @@ const Login = () => {
     } else alert("Please Enter Correct Login Details");
   };
   return (
-    <div className="login">
+    <div className="register">
       <h1 className="h1-heading">Login</h1>
       <input
         type="text"
