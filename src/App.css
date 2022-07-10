@@ -1,0 +1,113 @@
+.nav-ul {
+  padding: 5px;
+  background-color: #7b64a8;
+}
+.nav-ul img {
+  width: 55px;
+  border-radius: 50%;
+  float: left;
+  margin-left: 6px;
+}
+.nav-ul li {
+  display: inline-block;
+  padding-right: 10px;
+}
+.nav-ul li a {
+  color: white;
+  padding: 15px;
+  text-decoration: none;
+}
+.register {
+  margin-left: 30%;
+}
+.login {
+  margin-left: 30%;
+  margin-top: 100px;
+}
+.login h1 {
+  margin: 30px;
+}
+.add-product {
+  margin: 25px;
+  margin-left: 30%;
+}
+.inputBox {
+  display: block;
+  margin: 25px;
+  padding: 10px;
+  width: 300px;
+  border: 1px solid #7b64a8;
+}
+.appButton {
+  margin: 25px;
+  padding: 10px;
+  width: 130px;
+  background-color: #7b64a8;
+  border: 1px solid;
+  cursor: pointer;
+}
+.inputError {
+  color: red;
+  margin-top: -20px;
+  margin-left: 25px;
+  display: block;
+}
+.product-list {
+  text-align: center;
+  margin-top: 50px;
+}
+.bold-head {
+  font-weight: 600;
+  color: #9702d2;
+}
+.h1-heading {
+  font-family: emoji;
+  color: darkblue;
+}
+.product-list ul {
+  margin: 0px;
+}
+.product-list ul li {
+  display: inline-block;
+  padding: 5px;
+  border: 1px solid #7b64a8;
+  width: 15%;
+}
+.prod-list-span {
+  color: #701231;
+  font-size: 40px;
+}
+.search-product {
+  width: 300px;
+  margin: 10px;
+  margin-left: 40%;
+  margin-bottom: 30px;
+  border: 2px solid #7b64a8;
+  padding: 5px;
+  display: block;
+}
+
+.profile-info {
+  text-align: center;
+  color: #3e8f03;
+}
+.profile-info h1 {
+  font-family: Apple Chancery, cursive;
+  font-variant: small-caps;
+  margin-bottom: 100px;
+  margin-top: 65px;
+}
+.profile-info h2 {
+  font-family: DejaVu Sans monospace;
+}
+.text-color-white {
+  color: white;
+  font-weight: 600;
+}
+.footer {
+  position: absolute;
+  bottom: 0px;
+  text-align: center;
+  width: 100%;
+  background-color: #7b64a8;
+}
