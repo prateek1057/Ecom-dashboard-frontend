@@ -29,7 +29,7 @@ const SignUp = () => {
   };
   return (
     <div className="register">
-      <h1>Register</h1>
+      <h1 className="h1-heading">Register</h1>
       <input
         className="inputBox"
         type="text"
