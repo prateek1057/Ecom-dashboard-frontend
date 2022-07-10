@@ -24,11 +24,16 @@
 }
 .register h1 {
   margin: 30px;
+  font-size: xxx-large;
 }
 
 .add-product {
-  margin: 25px;
-  margin-left: 30%;
+  margin-top: 90px;
+  margin-left: 450px;
+}
+.add-product h1{
+  margin: 30px;
+  font-size: xxx-large;
 }
 .inputBox {
   display: block;
