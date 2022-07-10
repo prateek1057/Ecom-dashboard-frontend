@@ -43,7 +43,7 @@ const Login = () => {
         }}
         placeholder="Enter Password"
       />
-      <button type="button" onClick={handleClick} className="appButton">
+      <button type="button" onClick={handleClick} className="appButton text-color-white">
         Login
       </button>
     </div>

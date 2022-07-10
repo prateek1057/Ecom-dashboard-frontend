@@ -57,7 +57,7 @@ const SignUp = () => {
         }}
         placeholder="Enter Password"
       ></input>
-      <button className="appButton" onClick={collectData} type="button">
+      <button className="appButton text-color-white" onClick={collectData} type="button">
         SignUp
       </button>
     </div>
