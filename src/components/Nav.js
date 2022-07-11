@@ -9,7 +9,7 @@ const Nav = () => {
   };
   return (
     <div className="">
-      <nav class="navbar navbar-expand-sm  bg-dark navbar-dark fixed-top ">
+      <nav class="navbar navbar-expand  bg-dark navbar-dark fixed-top ">
         <a class="navbar-brand" href="#">
           <img
             src="https://i.ibb.co/ZKcjm4K/1655959794757.jpg"
