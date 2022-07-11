@@ -20,18 +20,22 @@ const SignUp = () => {
       },
     });
     result = await result.json();
-    //console.log(result);
+    console.log(result);
     if (result.token) {
       localStorage.setItem("users", JSON.stringify(result.data));
       localStorage.setItem("token", JSON.stringify(result.token));
       navigate("/");
     } else console.log(result);
+    if(result){
+    localStorage.setItem("users", JSON.stringify(result));
+    navigate('/');}
   };
   return (
-    <div className="register">
-      <h1 className="h1-heading">Register</h1>
+    <div className="container m-5 mx-auto w-75 p-5">
+      <h1 className="m-3 pt-5">Register</h1>
       <input
-        className="inputBox"
+        className="form-control form-group m-3"
+       
         type="text"
         value={name}
         onChange={(e) => {
@@ -40,7 +44,7 @@ const SignUp = () => {
         placeholder="Enter Name"
       ></input>
       <input
-        className="inputBox"
+        className="form-control form-group m-3"
         type="text"
         value={email}
         onChange={(e) => {
@@ -49,7 +53,7 @@ const SignUp = () => {
         placeholder="Enter Email"
       ></input>
       <input
-        className="inputBox"
+        className="form-control form-group m-3"
         type="password"
         value={password}
         onChange={(e) => {
@@ -57,7 +61,7 @@ const SignUp = () => {
         }}
         placeholder="Enter Password"
       ></input>
-      <button className="appButton text-color-white" onClick={collectData} type="button">
+      <button className="btn btn-success m-3 " onClick={collectData} type="button">
         SignUp
       </button>
     </div>

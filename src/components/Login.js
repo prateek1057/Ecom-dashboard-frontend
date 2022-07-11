@@ -21,13 +21,16 @@ const Login = () => {
       localStorage.setItem("token", JSON.stringify(result.token));
       navigate("/");
     } else alert("Please Enter Correct Login Details");
+    if(result)
+    {localStorage.setItem("users", JSON.stringify(result));
+    navigate('/');}
   };
   return (
-    <div className="register">
-      <h1 className="h1-heading">Login</h1>
+    <div className="container m-5 mx-auto w-75 p-5">
+      <h1 className="m-3 pt-5">Login</h1>
       <input
         type="text"
-        className="inputBox"
+        className="form-control form-group m-3"
         value={email}
         onChange={(e) => {
           setEmail(e.target.value);
@@ -36,14 +39,14 @@ const Login = () => {
       />
       <input
         type="password"
-        className="inputBox"
+        className="form-control form-group m-3"
         value={password}
         onChange={(e) => {
           setPassword(e.target.value);
         }}
         placeholder="Enter Password"
       />
-      <button type="button" onClick={handleClick} className="appButton text-color-white">
+      <button type="button" onClick={handleClick} className="btn btn-success m-3">
         Login
       </button>
     </div>

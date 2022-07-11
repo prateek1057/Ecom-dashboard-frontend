@@ -13,7 +13,7 @@ const AddProduct = () => {
       setError(true);
       return false;
     }
-    
+
     const userId = JSON.parse(localStorage.getItem("users"))._id;
     let result = await fetch("https://ecom-dashboardf.herokuapp.com/add-prod", {
       method: "post",
@@ -31,21 +31,23 @@ const AddProduct = () => {
     }
   };
   return (
-    <div className="add-product">
-      <h1 className="h1-heading">Add Product</h1>
+    <div className="container m-5 mx-auto w-75 p-5">
+      <h1 className="m-2 mb-4 pt-5">Add Product</h1>
       <input
         type="text"
-        className="inputBox"
+        className="form-control form-group m-3"
         placeholder="Enter Product Name"
         value={name}
         onChange={(e) => {
           setName(e.target.value);
         }}
       ></input>
-      {error && !name && <span className="inputError">Enter valid name.</span>}
+      {error && !name && (
+        <span className="text-danger list-bold p-3">Enter valid name.</span>
+      )}
       <input
         type="text"
-        className="inputBox"
+        className="form-control form-group m-3"
         placeholder="Enter Product Price"
         value={price}
         onChange={(e) => {
@@ -53,11 +55,11 @@ const AddProduct = () => {
         }}
       ></input>
       {error && !price && (
-        <span className="inputError">Enter valid price.</span>
+        <span className="text-danger list-bold m-3 ">Enter valid price.</span>
       )}
       <input
         type="text"
-        className="inputBox"
+        className="form-control form-group m-3"
         placeholder="Enter Product Category"
         value={category}
         onChange={(e) => {
@@ -65,11 +67,11 @@ const AddProduct = () => {
         }}
       ></input>
       {error && !category && (
-        <span className="inputError">Enter valid category.</span>
+        <span className="text-danger list-bold m-3">Enter valid category.</span>
       )}
       <input
         type="text"
-        className="inputBox"
+        className="form-control form-group m-3"
         placeholder="Enter Product Company"
         value={company}
         onChange={(e) => {
@@ -77,11 +79,11 @@ const AddProduct = () => {
         }}
       ></input>
       {error && !company && (
-        <span className="inputError">Enter valid company.</span>
+        <span className="text-danger list-bold m-3">Enter valid company.</span>
       )}
       <button
         type="button"
-        className="appButton text-color-white"
+        className="btn btn-success m-3 px-5"
         onClick={handleClick}
       >
         Add

@@ -14,7 +14,7 @@ const UpdateProduct = () => {
   //Prefill Data
   const getProduct = async () => {
     let data = await fetch(`https://ecom-dashboardf.herokuapp.com/prod-get/${params.id}`, {
-      headers: {
+       headers: {
         authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
     });
@@ -39,11 +39,11 @@ const UpdateProduct = () => {
   };
 
   return (
-    <div className="add-product">
-      <h1 className="h1-heading">Update Product</h1>
+    <div className="container m-5 mx-auto w-75 p-5">
+      <h1 className="m-2 mb-4 pt-5">Update Product</h1>
       <input
         type="text"
-        className="inputBox"
+        className="form-control form-group m-3"
         placeholder="Enter Product Name"
         value={name}
         onChange={(e) => {
@@ -52,7 +52,7 @@ const UpdateProduct = () => {
       ></input>
       <input
         type="text"
-        className="inputBox"
+        className="form-control form-group m-3"
         placeholder="Enter Product Price"
         value={price}
         onChange={(e) => {
@@ -61,7 +61,7 @@ const UpdateProduct = () => {
       ></input>
       <input
         type="text"
-        className="inputBox"
+        className="form-control form-group m-3"
         placeholder="Enter Product Category"
         value={category}
         onChange={(e) => {
@@ -70,7 +70,7 @@ const UpdateProduct = () => {
       ></input>
       <input
         type="text"
-        className="inputBox"
+        className="form-control form-group m-3"
         placeholder="Enter Product Company"
         value={company}
         onChange={(e) => {
@@ -79,7 +79,7 @@ const UpdateProduct = () => {
       ></input>
       <button
         type="button"
-        className="appButton text-color-white"
+        className="btn btn-success m-3 px-5"
         onClick={handleClick}
       >
         Update

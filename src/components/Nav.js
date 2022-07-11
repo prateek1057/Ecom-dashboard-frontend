@@ -8,42 +8,59 @@ const Nav = () => {
     navigate("/login");
   };
   return (
-    <div className="nav-ul">
-      <img
-        src="https://i.ibb.co/ZKcjm4K/1655959794757.jpg"
-        alt="Web Developer"
-      />
-
-      {auth ? (
-        <ul>
-          <li>
-            <Link to="/">Products</Link>
-          </li>
-          <li>
-            <Link to="/add">Add Product</Link>
-          </li>
-          <li>
-            <Link to="/update/:id">Update Product</Link>
-          </li>
-          <li>
-            <Link to="/profile">Profile</Link>
-          </li>
-          <li>
-            <Link onClick={logout} to="/login">
-              Logout ({JSON.parse(auth).name})
-            </Link>
-          </li>
-        </ul>
-      ) : (
-        <ul>
-          <li>
-            <Link to="/signup">SignUp</Link>
-          </li>
-          <li>
-            <Link to="/login">Login</Link>
-          </li>
-        </ul>
-      )}
+    <div className="">
+      <nav class="navbar navbar-expand-sm  bg-dark navbar-dark fixed-top ">
+        <a class="navbar-brand" href="#">
+          <img
+            src="https://i.ibb.co/ZKcjm4K/1655959794757.jpg"
+            className="rounded-circle"
+            alt="Web Developer"
+            Style="width:55px;"
+          />
+        </a>
+        {auth ? (
+          <ul className="navbar-nav">
+            <li className="nav-item mx-2">
+              <Link to="/" className="nav-link active">
+                Products
+              </Link>
+            </li>
+            <li className="nav-item mx-2 ">
+              <Link to="/add" className="nav-link active">
+                Add Product
+              </Link>
+            </li>
+            <li className="nav-item mx-2 ">
+              <Link to="/update/:id" className="nav-link active">
+                Update Product
+              </Link>
+            </li>
+            <li className="nav-item mx-2 ">
+              <Link to="/profile" className="nav-link active">
+                Profile
+              </Link>
+            </li>
+            <li className="nav-item mx-2 ">
+              <Link onClick={logout} to="/login" className="nav-link active">
+                Logout ({JSON.parse(auth).name})
+              </Link>
+            </li>
+          </ul>
+        ) : (
+          <ul className="navbar-nav">
+            <li className="nav-item mx-2 ">
+              <Link to="/signup" className="nav-link active">
+                SignUp
+              </Link>
+            </li>
+            <li className="nav-item mx-2 ">
+              <Link to="/login" className="nav-link active">
+                Login
+              </Link>
+            </li>
+          </ul>
+        )}
+      </nav>
     </div>
   );
 };
