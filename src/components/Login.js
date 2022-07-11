@@ -8,6 +8,7 @@ const Login = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const navigate = useNavigate();
+  
   const handleClick = async () => {
     let result = await fetch("https://ecom-dashboardf.herokuapp.com/login", {
       method: "post",
@@ -21,9 +22,6 @@ const Login = () => {
       localStorage.setItem("token", JSON.stringify(result.token));
       navigate("/");
     } else alert("Please Enter Correct Login Details");
-    if(result)
-    {localStorage.setItem("users", JSON.stringify(result));
-    navigate('/');}
   };
   return (
     <div className="container m-5 mx-auto w-75 p-5">

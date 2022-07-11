@@ -26,9 +26,6 @@ const SignUp = () => {
       localStorage.setItem("token", JSON.stringify(result.token));
       navigate("/");
     } else console.log(result);
-    if(result){
-    localStorage.setItem("users", JSON.stringify(result));
-    navigate('/');}
   };
   return (
     <div className="container m-5 mx-auto w-75 p-5">
