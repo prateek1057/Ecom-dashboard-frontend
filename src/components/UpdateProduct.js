@@ -39,7 +39,7 @@ const UpdateProduct = () => {
   };
 
   return (
-    <div className="container m-5 mx-auto w-75 p-5">
+    <div className="container m-5 mx-auto  p-5">
       <h1 className="m-2 mb-4 pt-5">Update Product</h1>
       <input
         type="text"
