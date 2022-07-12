@@ -3,26 +3,26 @@ import { Link } from "react-router-dom";
 const ProductList = () => {
   const [products, setProducts] = React.useState([]);
   const flag = products.length > 0;
-  const userId = JSON.parse(localStorage.getItem("users"));
+  const userId = JSON.parse(localStorage.getItem("users"))._id;
+  
   React.useEffect(() => {
     handleEffect();
-  });
+  },[]);
 
   const handleEffect = async () => {
-    let data = await fetch("https://ecom-dashboardf.herokuapp.com/prod-list", {
-      method: "post",
-      body: JSON.stringify({ userId }),
+    let data = await fetch(`https://cors-anywhere.herokuapp.com/https://ecom-dashboardf.herokuapp.com/prod-list/${userId}`, {
       headers: {
         "Content-Type": "application/json",
         authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
     });
     data = await data.json();
+    console.log(data);
     setProducts(data);
   };
 
   const handleDelete = async (id) => {
-    let data = await fetch(`https://ecom-dashboardf.herokuapp.com/prod-delete/${id}`, {
+    let data = await fetch(`https://cors-anywhere.herokuapp.com/https://ecom-dashboardf.herokuapp.com/prod-delete/${id}`, {
       method: "delete",
       headers: {
         authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
@@ -35,7 +35,7 @@ const ProductList = () => {
   const searchHandle = async (event) => {
     let key = event.target.value;
     if (key) {
-      let result = await fetch(`https://ecom-dashboardf.herokuapp.com/search/${key}`, {
+      let result = await fetch(`https://cors-anywhere.herokuapp.com/https://ecom-dashboardf.herokuapp.com/search/${key}`, {
         headers: {
           authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
         }

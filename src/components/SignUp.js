@@ -12,7 +12,7 @@ const SignUp = () => {
     if (auth) navigate("/");
   });
   const collectData = async () => {
-    let result = await fetch("https://ecom-dashboardf.herokuapp.com/register", {
+    let result = await fetch("https://cors-anywhere.herokuapp.com/https://ecom-dashboardf.herokuapp.com/register", {
       method: "post",
       body: JSON.stringify({ name, email, password }),
       headers: {

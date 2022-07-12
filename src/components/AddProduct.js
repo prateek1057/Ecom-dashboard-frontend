@@ -15,7 +15,7 @@ const AddProduct = () => {
     }
 
     const userId = JSON.parse(localStorage.getItem("users"))._id;
-    let result = await fetch("https://ecom-dashboardf.herokuapp.com/add-prod", {
+    let result = await fetch("https://cors-anywhere.herokuapp.com/https://ecom-dashboardf.herokuapp.com/add-prod", {
       method: "post",
       body: JSON.stringify({ name, price, category, userId, company }),
       headers: {

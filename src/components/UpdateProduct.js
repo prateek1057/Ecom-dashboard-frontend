@@ -13,7 +13,7 @@ const UpdateProduct = () => {
 
   //Prefill Data
   const getProduct = async () => {
-    let data = await fetch(`https://ecom-dashboardf.herokuapp.com/prod-get/${params.id}`, {
+    let data = await fetch(`https://cors-anywhere.herokuapp.com/https://ecom-dashboardf.herokuapp.com/prod-get/${params.id}`, {
        headers: {
         authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
       },
@@ -26,7 +26,7 @@ const UpdateProduct = () => {
   };
 
   const handleClick = async () => {
-    let data = await fetch(`https://ecom-dashboardf.herokuapp.com/prod-update/${params.id}`, {
+    let data = await fetch(`https://cors-anywhere.herokuapp.com/https://ecom-dashboardf.herokuapp.com/prod-update/${params.id}`, {
       method: "put",
       body: JSON.stringify({ name, price, category, company }),
       headers: {
