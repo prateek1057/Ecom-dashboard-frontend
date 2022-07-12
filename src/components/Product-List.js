@@ -7,7 +7,7 @@ const ProductList = () => {
   
   React.useEffect(() => {
     handleEffect();
-  });
+  },[]);
 
   const handleEffect = async () => {
     let data = await fetch(`https://ecom-dashboardf.herokuapp.com/prod-list/${userId}`, {
