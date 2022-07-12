@@ -10,7 +10,7 @@ const Login = () => {
   const navigate = useNavigate();
   
   const handleClick = async () => {
-    let result = await fetch("https://cors-anywhere.herokuapp.com/https://ecom-dashboardf.herokuapp.com/login", {
+    let result = await fetch("https://ecom-dashboardf.herokuapp.com/login", {
       method: "post",
       body: JSON.stringify({ email, password }),
       headers: { "Content-Type": "application/json" },

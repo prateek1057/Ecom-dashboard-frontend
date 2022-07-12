@@ -10,7 +10,7 @@ const ProductList = () => {
   });
 
   const handleEffect = async () => {
-    let data = await fetch(`https://cors-anywhere.herokuapp.com/https://ecom-dashboardf.herokuapp.com/prod-list/${userId}`, {
+    let data = await fetch(`https://ecom-dashboardf.herokuapp.com/prod-list/${userId}`, {
       headers: {
         "Content-Type": "application/json",
         authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
@@ -22,7 +22,7 @@ const ProductList = () => {
   };
 
   const handleDelete = async (id) => {
-    let data = await fetch(`https://cors-anywhere.herokuapp.com/https://ecom-dashboardf.herokuapp.com/prod-delete/${id}`, {
+    let data = await fetch(`https://ecom-dashboardf.herokuapp.com/prod-delete/${id}`, {
       method: "delete",
       headers: {
         authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
@@ -35,7 +35,7 @@ const ProductList = () => {
   const searchHandle = async (event) => {
     let key = event.target.value;
     if (key) {
-      let result = await fetch(`https://cors-anywhere.herokuapp.com/https://ecom-dashboardf.herokuapp.com/search/${key}`, {
+      let result = await fetch(`https://ecom-dashboardf.herokuapp.com/search/${key}`, {
         headers: {
           authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
         }
