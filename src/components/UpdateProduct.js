@@ -13,27 +13,35 @@ const UpdateProduct = () => {
 
   //Prefill Data
   const getProduct = async () => {
-    let data = await fetch(`https://ecom-dashboardf.herokuapp.com/prod-get/${params.id}`, {
-       headers: {
-        authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
-      },
-    });
+    let data = await fetch(
+      `https://ecom-dashboardf.herokuapp.com/prod-get/${params.id}`,
+      {
+        headers: {
+          authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
+        },
+      }
+    );
     data = await data.json();
-    setName(data.name);
-    setPrice(data.price);
-    setCategory(data.category);
-    setCompany(data.company);
+    if (data.length) {
+      setName(data[0].name);
+      setPrice(data[0].price);
+      setCategory(data[0].category);
+      setCompany(data[0].company);
+    }
   };
 
   const handleClick = async () => {
-    let data = await fetch(`https://ecom-dashboardf.herokuapp.com/prod-update/${params.id}`, {
-      method: "put",
-      body: JSON.stringify({ name, price, category, company }),
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
-      },
-    });
+    let data = await fetch(
+      `https://ecom-dashboardf.herokuapp.com/prod-update/${params.id}`,
+      {
+        method: "put",
+        body: JSON.stringify({ name, price, category, company }),
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
+        },
+      }
+    );
     data = await data.json();
     if (data) navigate("/");
   };

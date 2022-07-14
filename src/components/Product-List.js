@@ -2,32 +2,42 @@ import React from "react";
 import { Link } from "react-router-dom";
 const ProductList = () => {
   const [products, setProducts] = React.useState([]);
+  const [initalRender, setInitialRender] = React.useState(false);
   const flag = products.length > 0;
   const userId = JSON.parse(localStorage.getItem("users"))._id;
-  
+
   React.useEffect(() => {
     handleEffect();
-  },[]);
+  }, []);
 
   const handleEffect = async () => {
-    let data = await fetch(`https://ecom-dashboardf.herokuapp.com/prod-list/${userId}`, {
-      headers: {
-        "Content-Type": "application/json",
-        authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
-      },
-    });
+    let data = await fetch(
+      `https://ecom-dashboardf.herokuapp.com/prod-list/${userId}`,
+      {
+        headers: {
+          "Content-Type": "application/json",
+          authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
+        },
+      }
+    );
+
     data = await data.json();
-    console.log(data);
-    setProducts(data);
+    //console.log(data);
+    if (data.length > 0) setProducts(data);
+
+    setInitialRender(true);
   };
 
   const handleDelete = async (id) => {
-    let data = await fetch(`https://ecom-dashboardf.herokuapp.com/prod-delete/${id}`, {
-      method: "delete",
-      headers: {
-        authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
-      },
-    });
+    let data = await fetch(
+      `https://ecom-dashboardf.herokuapp.com/prod-delete/${id}`,
+      {
+        method: "delete",
+        headers: {
+          authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
+        },
+      }
+    );
     data = await data.json();
     if (data) handleEffect();
   };
@@ -35,11 +45,16 @@ const ProductList = () => {
   const searchHandle = async (event) => {
     let key = event.target.value;
     if (key) {
-      let result = await fetch(`https://ecom-dashboardf.herokuapp.com/search/${key}`, {
-        headers: {
-          authorization: `bearer ${JSON.parse(localStorage.getItem("token"))}`,
+      let result = await fetch(
+        `https://ecom-dashboardf.herokuapp.com/search/${key}`,
+        {
+          headers: {
+            authorization: `bearer ${JSON.parse(
+              localStorage.getItem("token")
+            )}`,
+          },
         }
-      });
+      );
       result = await result.json();
       if (result) {
         setProducts(result);
@@ -80,7 +95,7 @@ const ProductList = () => {
                   <td className="table-font-bold">{item.price}</td>
                   <td className="table-font-bold">{item.category}</td>
                   <td className="table-font-bold">{item.company}</td>
-                  <td className="d-flex">
+                  <td className="d-inline-flex">
                     <button
                       className="btn btn-success btn-sm m-1"
                       onClick={() => handleDelete(item._id)}
@@ -101,10 +116,14 @@ const ProductList = () => {
             </tbody>
           </table>
         </>
-      ) : (
-        <h1 className="text-center prod-list-span m-5 p-5">
+      ) : initalRender ? (
+        <h1 className="text-center text-danger prod-list-span m-5 p-5">
           No Product in the list
         </h1>
+      ) : (
+        <div className="text-center text-primary prod-list-span m-5 p-5">
+          Fetching Products...
+        </div>
       )}
     </div>
   );

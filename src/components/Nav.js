@@ -9,13 +9,13 @@ const Nav = () => {
   };
   return (
     <div className="">
-      <nav class="navbar navbar-expand  bg-dark navbar-dark fixed-top ">
-        <a class="navbar-brand" href="#">
+      <nav className="navbar navbar-expand  bg-dark navbar-dark fixed-top ">
+        <a className="navbar-brand" href="#">
           <img
             src="https://i.ibb.co/ZKcjm4K/1655959794757.jpg"
             className="rounded-circle"
             alt="Web Developer"
-            Style="width:55px;"
+            style={{ width: "55px" }}
           />
         </a>
         {auth ? (
@@ -30,11 +30,7 @@ const Nav = () => {
                 Add Product
               </Link>
             </li>
-            <li className="nav-item mx-1 ">
-              <Link to="/update/:id" className="nav-link active">
-                Update Product
-              </Link>
-            </li>
+
             <li className="nav-item mx-1 ">
               <Link to="/profile" className="nav-link active">
                 Profile

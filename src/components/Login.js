@@ -8,7 +8,7 @@ const Login = () => {
   const [email, setEmail] = React.useState("");
   const [password, setPassword] = React.useState("");
   const navigate = useNavigate();
-  
+
   const handleClick = async () => {
     let result = await fetch("https://ecom-dashboardf.herokuapp.com/login", {
       method: "post",
@@ -44,7 +44,11 @@ const Login = () => {
         }}
         placeholder="Enter Password"
       />
-      <button type="button" onClick={handleClick} className="btn btn-success m-3">
+      <button
+        type="button"
+        onClick={handleClick}
+        className="btn btn-success m-3"
+      >
         Login
       </button>
     </div>

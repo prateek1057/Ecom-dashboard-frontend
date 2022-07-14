@@ -25,14 +25,13 @@ const SignUp = () => {
       localStorage.setItem("users", JSON.stringify(result.data));
       localStorage.setItem("token", JSON.stringify(result.token));
       navigate("/");
-    } else console.log(result);
+    }
   };
   return (
     <div className="container m-5 mx-auto w-75 p-5">
       <h1 className="m-3 pt-5">Register</h1>
       <input
         className="form-control form-group m-3"
-       
         type="text"
         value={name}
         onChange={(e) => {
@@ -58,7 +57,11 @@ const SignUp = () => {
         }}
         placeholder="Enter Password"
       ></input>
-      <button className="btn btn-success m-3 " onClick={collectData} type="button">
+      <button
+        className="btn btn-success m-3 "
+        onClick={collectData}
+        type="button"
+      >
         SignUp
       </button>
     </div>
